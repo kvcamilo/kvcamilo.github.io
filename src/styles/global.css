@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile safe area support - prevents content from being hidden behind navigation */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Ensure main content has space for fixed BottomNav on mobile */
+@media (max-width: 768px) {
+  main, [role="main"] {
+    @apply pb-24;
+  }
+  
+  .flex.flex-col.lg\:ml-96 {
+    max-height: calc(100vh - 100px) !important;
+  }
+}
+
 /* Dark mode custom styles - explicitly defined */
 html.dark {
   color-scheme: dark;
