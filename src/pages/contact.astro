@@ -1,33 +1,7 @@
 ---
-export const prerender = false;
-
-import Layout from '../layouts/Layout.astro';
-import BottomNav from '../components/BottomNav.astro';
-import Section from '../components/Section.astro';
-
-import esTranslations from '../data/i18n/es.json';
-import enTranslations from '../data/i18n/en.json';
-
-// Try to import contact data, use empty object as fallback
-let contact = { email: '', phone: '', social: {} };
-try {
-  const contactData = await import('../data/contact.json');
-  contact = contactData.default || contactData;
-} catch (error) {
-  // If contact.json doesn't exist, redirect to home
-  return Astro.redirect('/');
-}
-
-// Get language from query parameter or cookie
-const langParam = Astro.url.searchParams.get('lang');
-const cookieHeader = Astro.request.headers.get('cookie') || '';
-const langCookie = cookieHeader
-  .split('; ')
-  .find(row => row.startsWith('lang='))
-  ?.split('=')[1];
-
-const currentLang = (langParam === 'en' || langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
-const t = currentLang === 'en' ? enTranslations : esTranslations;
+// Redirect to Spanish version
+return Astro.redirect('/es/contact/');
+---
 ---
 
 <Layout title={`${t.contact.title}`} description={t.contact.intro}>

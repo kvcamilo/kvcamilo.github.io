@@ -1,34 +1,7 @@
 ---
-export const prerender = false;
-
-import Layout from '../layouts/Layout.astro';
-import BottomNav from '../components/BottomNav.astro';
-import Section from '../components/Section.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-
-import esTranslations from '../data/i18n/es.json';
-import enTranslations from '../data/i18n/en.json';
-
-// Try to import required data, redirect to home if missing
-let projects;
-try {
-  const projectsData = await import('../data/projects.json');
-  projects = projectsData.default || projectsData;
-} catch (error) {
-  return Astro.redirect('/');
-}
-
-// Get language from query parameter or cookie
-const langParam = Astro.url.searchParams.get('lang');
-const cookieHeader = Astro.request.headers.get('cookie') || '';
-const langCookie = cookieHeader
-  .split('; ')
-  .find(row => row.startsWith('lang='))
-  ?.split('=')[1];
-
-const currentLang = (langParam === 'en' || langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
-const t = currentLang === 'en' ? enTranslations : esTranslations;
-const projectsData = projects[currentLang];
+// Redirect to Spanish version
+return Astro.redirect('/es/projects/');
+---
 ---
 
 <Layout title={`${t.projects.title}`} description={t.projects.subtitle}>

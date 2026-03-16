@@ -1,0 +1,52 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BottomNav from '../../../components/BottomNav.astro';
+import Section from '../../../components/Section.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+
+import esTranslations from '../../../data/i18n/es.json';
+import enTranslations from '../../../data/i18n/en.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+
+// Try to import required data, redirect to home if missing
+let projects;
+try {
+  const projectsData = await import('../../../data/projects.json');
+  projects = projectsData.default || projectsData;
+} catch (error) {
+  return Astro.redirect(`/${currentLang}/`);
+}
+
+const projectsData = projects[currentLang];
+---
+
+<Layout title={`${t.projects.title}`} description={t.projects.subtitle} lang={currentLang}>
+  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+    <Section id="projects" title={t.projects.title} subtitle={t.projects.subtitle}>
+    <div>
+      {projectsData.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          tech={project.tech}
+          year={project.year}
+          url={project.url}
+        />
+      ))}
+    </div>
+  </Section>
+  </div>
+
+  <BottomNav currentLang={currentLang} currentPage="projects" />
+</Layout>

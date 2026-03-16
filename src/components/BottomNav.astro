@@ -29,11 +29,11 @@ const isActive = (page: string) => currentPage === page;
 
 // Define page structure with required JSON files
 const pageDefinitions = [
-  { id: 'home', path: '/', icon: '🏠', requiredFiles: ['profile.json'] },
-  { id: 'about', path: '/about/', icon: '👤', requiredFiles: ['profile.json', 'experience.json'] },
-  { id: 'projects', path: '/projects/', icon: '📁', requiredFiles: ['projects.json'] },
-  { id: 'research', path: '/research/', icon: '📚', requiredFiles: ['research.json'] },
-  { id: 'contact', path: '/contact/', icon: '✉️', requiredFiles: ['contact.json'] },
+  { id: 'home', pathSegment: '', icon: '🏠', requiredFiles: ['profile.json'] },
+  { id: 'about', pathSegment: 'about/', icon: '👤', requiredFiles: ['profile.json', 'experience.json'] },
+  { id: 'projects', pathSegment: 'projects/', icon: '📁', requiredFiles: ['projects.json'] },
+  { id: 'research', pathSegment: 'research/', icon: '📚', requiredFiles: ['research.json'] },
+  { id: 'contact', pathSegment: 'contact/', icon: '✉️', requiredFiles: ['contact.json'] },
 ];
 
 // Get all available data files
@@ -54,7 +54,7 @@ const enabledPages = pageDefinitions.filter(page =>
     <div class="flex justify-around items-center gap-2">
       {enabledPages.map((page) => (
         <a
-          href={page.path}
+          href={`/${currentLang}/${page.pathSegment}`}
           class={`flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded transition-colors flex flex-col items-center gap-1 ${
             isActive(page.id)
               ? 'text-gray-900 dark:text-white'
@@ -71,7 +71,7 @@ const enabledPages = pageDefinitions.filter(page =>
         title={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
       >
         <span class="text-lg">🌐</span>
-        <span class="hidden sm:inline" data-lang-toggle="true">
+        <span class="hidden sm:inline">
           {currentLang === 'es' ? 'EN' : 'ES'}
         </span>
       </button>
@@ -115,26 +115,21 @@ const enabledPages = pageDefinitions.filter(page =>
     });
   }
 
-  // Language toggle
+  // Language toggle - save preference and trigger translation
   const langToggle = document.getElementById('langToggle');
   if (langToggle) {
     langToggle.addEventListener('click', function() {
-      // Get current language from cookie
-      const cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('lang='))
-        ?.split('=')[1];
-      
-      const currentLang = cookieValue || 'es';
+      // Get current language preference from localStorage
+      const currentLang = localStorage.getItem('lang') || 'es';
       const newLang = currentLang === 'es' ? 'en' : 'es';
       
-      // Set cookie with new language
-      document.cookie = `lang=${newLang}; path=/; max-age=${365 * 24 * 60 * 60}`;
+      // Save preference
+      localStorage.setItem('lang', newLang);
       
-      // Add language query parameter to current URL
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', newLang);
-      window.location.href = url.toString();
+      // Get current path and replace language
+      const currentPath = window.location.pathname;
+      const newPath = currentPath.replace(/^\/(es|en)/, `/${newLang}`);
+      window.location.href = newPath;
     });
   }
 </script>

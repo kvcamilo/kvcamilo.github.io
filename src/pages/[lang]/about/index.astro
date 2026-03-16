@@ -1,10 +1,39 @@
 ---
-// Redirect to Spanish version
-return Astro.redirect('/es/about/');
----
+import Layout from '../../../layouts/Layout.astro';
+import BottomNav from '../../../components/BottomNav.astro';
+import Section from '../../../components/Section.astro';
+import ExperienceItem from '../../../components/ExperienceItem.astro';
+
+import esTranslations from '../../../data/i18n/es.json';
+import enTranslations from '../../../data/i18n/en.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+
+// Try to import required data, redirect to home if missing
+let profile, experience;
+try {
+  const profileData = await import('../../../data/profile.json');
+  const experienceData = await import('../../../data/experience.json');
+  profile = profileData.default || profileData;
+  experience = experienceData.default || experienceData;
+} catch (error) {
+  return Astro.redirect(`/${currentLang}/`);
+}
+
+const profileData = profile[currentLang];
+const experienceData = experience[currentLang];
 ---
 
-<Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio}>
+<Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio} lang={currentLang}>
   <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
     <Section id="about" title={t.about.title}>
     <div class="max-w-none text-gray-700 dark:text-gray-400 mb-6 sm:mb-12">

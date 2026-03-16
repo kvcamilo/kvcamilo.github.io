@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BottomNav from '../../../components/BottomNav.astro';
+import Section from '../../../components/Section.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+
+import esTranslations from '../../../data/i18n/es.json';
+import enTranslations from '../../../data/i18n/en.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+
+// Try to import required data, redirect to home if missing
+let research;
+try {
+  const researchData = await import('../../../data/research.json');
+  research = researchData.default || researchData;
+} catch (error) {
+  return Astro.redirect(`/${currentLang}/`);
+}
+
+const researchData = research[currentLang];
+---
+
+<Layout title={`${t.research.title}`} description={t.research.subtitle} lang={currentLang}>
+  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+    <Section id="research" title={t.research.title} subtitle={t.research.subtitle}>
+    <div>
+      {researchData.map((article) => (
+        <ArticleCard
+          title={article.title}
+          summary={article.summary}
+          date={article.date}
+          url={article.url}
+          type={article.type}
+        />
+      ))}
+    </div>
+  </Section>
+  </div>
+
+  <BottomNav currentLang={currentLang} currentPage="research" />
+</Layout>
