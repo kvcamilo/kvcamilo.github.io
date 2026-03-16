@@ -8,6 +8,15 @@ import esTranslations from '../../../data/i18n/es.json';
 import enTranslations from '../../../data/i18n/en.json';
 
 export function getStaticPaths() {
+  // Check if required data files exist
+  const dataFiles = import.meta.glob('/src/data/*.json');
+  const hasProfile = '/src/data/profile.json' in dataFiles;
+  const hasExperience = '/src/data/experience.json' in dataFiles;
+  
+  // Only generate pages if required files exist
+  if (!hasProfile || !hasExperience) {
+    return [];
+  }
   return [
     { params: { lang: 'es' } },
     { params: { lang: 'en' } },
@@ -18,16 +27,11 @@ const { lang } = Astro.params;
 const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
 const t = currentLang === 'en' ? enTranslations : esTranslations;
 
-// Try to import required data, redirect to home if missing
-let profile, experience;
-try {
-  const profileData = await import('../../../data/profile.json');
-  const experienceData = await import('../../../data/experience.json');
-  profile = profileData.default || profileData;
-  experience = experienceData.default || experienceData;
-} catch (error) {
-  return Astro.redirect(`/${currentLang}/`);
-}
+// Import data (safe because getStaticPaths already verified they exist)
+const profileDataImport = await import('../../../data/profile.json');
+const experienceDataImport = await import('../../../data/experience.json');
+const profile = profileDataImport.default || profileDataImport;
+const experience = experienceDataImport.default || experienceDataImport;
 
 const profileData = profile[currentLang];
 const experienceData = experience[currentLang];

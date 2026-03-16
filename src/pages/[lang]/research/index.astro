@@ -8,33 +8,39 @@ import esTranslations from '../../../data/i18n/es.json';
 import enTranslations from '../../../data/i18n/en.json';
 
 export function getStaticPaths() {
+  // Load all JSON files eagerly - safe even if some don't exist
+  const modules = import.meta.glob('/src/data/*.json', { eager: true }) as Record<string, any>;
+  const researchModule = modules['/src/data/research.json'];
+  
+  // Only generate pages if research.json exists
+  if (!researchModule) {
+    return [];
+  }
   return [
     { params: { lang: 'es' } },
     { params: { lang: 'en' } },
   ];
 }
 
+// Load research data for all languages
+const modules = import.meta.glob('/src/data/*.json', { eager: true }) as Record<string, any>;
+const researchModule = modules['/src/data/research.json'];
+
 const { lang } = Astro.params;
 const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
 const t = currentLang === 'en' ? enTranslations : esTranslations;
 
-// Try to import required data, redirect to home if missing
-let research;
-try {
-  const researchData = await import('../../../data/research.json');
-  research = researchData.default || researchData;
-} catch (error) {
-  return Astro.redirect(`/${currentLang}/`);
-}
-
-const researchData = research[currentLang];
+// Safe to access because getStaticPaths verified it exists
+const researchObj = researchModule?.default || researchModule || { es: [], en: [] };
+const articles = researchObj[currentLang] || [];
+---
 ---
 
 <Layout title={`${t.research.title}`} description={t.research.subtitle} lang={currentLang}>
   <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
     <Section id="research" title={t.research.title} subtitle={t.research.subtitle}>
     <div>
-      {researchData.map((article) => (
+      {articles.map((article) => (
         <ArticleCard
           title={article.title}
           summary={article.summary}

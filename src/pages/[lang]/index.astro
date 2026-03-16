@@ -4,10 +4,13 @@ import BottomNav from '../../components/BottomNav.astro';
 import Section from '../../components/Section.astro';
 import ProjectCarousel from '../../components/ProjectCarousel.astro';
 
-import profile from '../../data/profile.json';
-import projects from '../../data/projects.json';
 import esTranslations from '../../data/i18n/es.json';
 import enTranslations from '../../data/i18n/en.json';
+
+// Check if required data files exist
+const dataFiles = import.meta.glob('/src/data/*.json');
+const hasProfile = '/src/data/profile.json' in dataFiles;
+const hasProjects = '/src/data/projects.json' in dataFiles;
 
 export function getStaticPaths() {
   return [
@@ -19,8 +22,22 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
 const t = currentLang === 'en' ? enTranslations : esTranslations;
-const profileData = profile[currentLang];
-const projectsData = projects[currentLang];
+
+// Import data only if they exist
+let profileData = { name: '', role: '', bio_short: '', location: '', email: '' };
+let projectsData: any[] = [];
+
+if (hasProfile) {
+  const profileImport = await import('../../data/profile.json');
+  const profile = profileImport.default || profileImport;
+  profileData = profile[currentLang];
+}
+
+if (hasProjects) {
+  const projectsImport = await import('../../data/projects.json');
+  const projects = projectsImport.default || projectsImport;
+  projectsData = projects[currentLang];
+}
 ---
 
 <Layout title={`${profileData.name} - ${profileData.role}`} description={profileData.bio_short} lang={currentLang}>

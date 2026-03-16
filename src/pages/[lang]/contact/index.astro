@@ -7,25 +7,32 @@ import esTranslations from '../../../data/i18n/es.json';
 import enTranslations from '../../../data/i18n/en.json';
 
 export function getStaticPaths() {
+  // Load all JSON files eagerly - safe even if some don't exist
+  const modules = import.meta.glob('/src/data/*.json', { eager: true }) as Record<string, any>;
+  const contactModule = modules['/src/data/contact.json'];
+  
+  // Only generate pages if contact.json exists
+  if (!contactModule) {
+    return [];
+  }
   return [
     { params: { lang: 'es' } },
     { params: { lang: 'en' } },
   ];
 }
 
+// Load contact data for all languages
+const modules = import.meta.glob('/src/data/*.json', { eager: true }) as Record<string, any>;
+const contactModule = modules['/src/data/contact.json'];
+
 const { lang } = Astro.params;
 const currentLang = (lang === 'en' ? 'en' : 'es') as 'es' | 'en';
 const t = currentLang === 'en' ? enTranslations : esTranslations;
 
-// Try to import contact data, use empty object as fallback
-let contact = { email: '', phone: '', social: {} };
-try {
-  const contactData = await import('../../../data/contact.json');
-  contact = contactData.default || contactData;
-} catch (error) {
-  // If contact.json doesn't exist, redirect to home
-  return Astro.redirect(`/${currentLang}/`);
-}
+// Safe to access because getStaticPaths verified it exists
+const contactObj = contactModule?.default || contactModule || { es: {}, en: {} };
+const contact = contactObj[currentLang] || { email: '', phone: '', social: {} };
+---
 ---
 
 <Layout title={`${t.contact.title}`} description={t.contact.intro} lang={currentLang}>
