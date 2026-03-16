@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from '../layouts/Layout.astro';
 import BottomNav from '../components/BottomNav.astro';
 import Section from '../components/Section.astro';
@@ -16,14 +18,15 @@ try {
   return Astro.redirect('/');
 }
 
-// Get language from cookies
+// Get language from query parameter or cookie
+const langParam = Astro.url.searchParams.get('lang');
 const cookieHeader = Astro.request.headers.get('cookie') || '';
 const langCookie = cookieHeader
   .split('; ')
   .find(row => row.startsWith('lang='))
-  ?.split('=')[1] || 'es';
+  ?.split('=')[1];
 
-const currentLang = (langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
+const currentLang = (langParam === 'en' || langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
 const t = currentLang === 'en' ? enTranslations : esTranslations;
 const projectsData = projects[currentLang];
 ---

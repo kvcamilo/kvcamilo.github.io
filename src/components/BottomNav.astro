@@ -119,6 +119,7 @@ const enabledPages = pageDefinitions.filter(page =>
   const langToggle = document.getElementById('langToggle');
   if (langToggle) {
     langToggle.addEventListener('click', function() {
+      // Get current language from cookie
       const cookieValue = document.cookie
         .split('; ')
         .find(row => row.startsWith('lang='))
@@ -127,8 +128,13 @@ const enabledPages = pageDefinitions.filter(page =>
       const currentLang = cookieValue || 'es';
       const newLang = currentLang === 'es' ? 'en' : 'es';
       
+      // Set cookie with new language
       document.cookie = `lang=${newLang}; path=/; max-age=${365 * 24 * 60 * 60}`;
-      window.location.reload();
+      
+      // Add language query parameter to current URL
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', newLang);
+      window.location.href = url.toString();
     });
   }
 </script>
