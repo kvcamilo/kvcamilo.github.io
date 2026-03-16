@@ -17,7 +17,8 @@
       "image": "/images/project-2.svg",
       "tech": ["React", "TypeScript", "Storybook"],
       "year": 2024,
-      "featured": true
+      "featured": true,
+      "url": "https://example.com/analytics"
     },
     {
       "id": "3",
@@ -36,7 +37,8 @@
       "image": "/images/project-4.svg",
       "tech": ["React", "Python", "FastAPI"],
       "year": 2023,
-      "featured": true
+      "featured": true,
+      "url": "https://example.com/analytics"
     }
   ],
   "en": [
@@ -57,7 +59,8 @@
       "image": "/images/project-2.svg",
       "tech": ["React", "TypeScript", "Storybook"],
       "year": 2024,
-      "featured": true
+      "featured": true,
+      "url": "https://example.com/analytics"
     },
     {
       "id": "3",
@@ -76,7 +79,8 @@
       "image": "/images/project-4.svg",
       "tech": ["React", "Python", "FastAPI"],
       "year": 2023,
-      "featured": true
+      "featured": true,
+      "url": "https://example.com/analytics"
     }
   ]
 }

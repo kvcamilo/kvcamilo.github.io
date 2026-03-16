@@ -4,6 +4,7 @@ interface Props {
     id: string;
     title: string;
     image: string;
+    url?: string;
   }>;
   lang?: 'es' | 'en';
 }
@@ -24,7 +25,12 @@ const duplicatedProjects = [...projects, ...projects];
   <div class="carousel-container-vertical h-full">
     <div class="carousel-track-vertical flex flex-col gap-6 py-8 px-4">
       {duplicatedProjects.map((project) => (
-        <div class="carousel-item flex-shrink-0 h-80 group cursor-pointer">
+        <a 
+          href={project.url || '#'} 
+          target={project.url ? '_blank' : undefined}
+          rel={project.url ? 'noopener noreferrer' : undefined}
+          class={`carousel-item flex-shrink-0 h-80 group cursor-pointer block transition-transform hover:scale-105 ${project.url ? 'hover:opacity-80' : 'opacity-70 pointer-events-none'}`}
+        >
           <div class="relative h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
             <img 
               src={project.image} 
@@ -35,7 +41,7 @@ const duplicatedProjects = [...projects, ...projects];
               <p class="text-gray-900 dark:text-white font-semibold text-sm line-clamp-2">{project.title}</p>
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
@@ -47,7 +53,12 @@ const duplicatedProjects = [...projects, ...projects];
   <div class="carousel-container-horizontal overflow-x-hidden">
     <div class="carousel-track-horizontal flex gap-4 px-2">
       {duplicatedProjects.map((project) => (
-        <div class="carousel-item flex-shrink-0 h-56 w-44 group cursor-pointer">
+        <a 
+          href={project.url || '#'} 
+          target={project.url ? '_blank' : undefined}
+          rel={project.url ? 'noopener noreferrer' : undefined}
+          class={`carousel-item flex-shrink-0 h-56 w-44 group cursor-pointer block transition-transform hover:scale-105 ${project.url ? 'hover:opacity-80' : 'opacity-70 pointer-events-none'}`}
+        >
           <div class="relative h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
             <img 
               src={project.image} 
@@ -58,7 +69,7 @@ const duplicatedProjects = [...projects, ...projects];
               <p class="text-gray-900 dark:text-white font-semibold text-xs line-clamp-2">{project.title}</p>
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
