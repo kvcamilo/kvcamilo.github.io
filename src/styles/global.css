@@ -11,12 +11,14 @@
 
 /* Ensure main content has space for fixed BottomNav on mobile */
 @media (max-width: 768px) {
-  main, [role="main"] {
-    @apply pb-24;
+  /* Add safe padding on content divs instead of pb-24 */
+  .max-h-\[calc\(100vh-80px\)\] {
+    max-height: calc(100vh - 100px) !important;
   }
   
-  .flex.flex-col.lg\:ml-96 {
-    max-height: calc(100vh - 100px) !important;
+  /* Ensure scrollable areas have safe margins */
+  .overflow-y-auto {
+    padding-bottom: 80px;
   }
 }
 
