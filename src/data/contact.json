@@ -1,0 +1,9 @@
+{
+  "email": "hello@alexrivera.dev",
+  "phone": "+1 (555) 123-4567",
+  "social": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com"
+  }
+}

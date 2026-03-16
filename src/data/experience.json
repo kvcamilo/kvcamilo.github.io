@@ -1,0 +1,42 @@
+{
+  "es": [
+    {
+      "id": "1",
+      "company": "TechCorp",
+      "role": "Ingeniero Senior Full Stack",
+      "startDate": "2022-06",
+      "endDate": null,
+      "current": true,
+      "summary": "Liderando la arquitectura y desarrollo de productos SaaS escalables"
+    },
+    {
+      "id": "2",
+      "company": "StartupHub",
+      "role": "Desarrollador Full Stack",
+      "startDate": "2020-03",
+      "endDate": "2022-05",
+      "current": false,
+      "summary": "Construí aplicaciones full-stack para múltiples empresas en etapa inicial"
+    }
+  ],
+  "en": [
+    {
+      "id": "1",
+      "company": "TechCorp",
+      "role": "Senior Full Stack Engineer",
+      "startDate": "2022-06",
+      "endDate": null,
+      "current": true,
+      "summary": "Leading architecture and development of scalable SaaS products"
+    },
+    {
+      "id": "2",
+      "company": "StartupHub",
+      "role": "Full Stack Developer",
+      "startDate": "2020-03",
+      "endDate": "2022-05",
+      "current": false,
+      "summary": "Built full-stack applications for multiple early-stage companies"
+    }
+  ]
+}

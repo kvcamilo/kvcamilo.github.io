@@ -1,0 +1,118 @@
+---
+interface Props {
+  projects: Array<{
+    id: string;
+    title: string;
+    image: string;
+  }>;
+  lang?: 'es' | 'en';
+}
+
+const { projects, lang = 'es' } = Astro.props;
+
+const translations = {
+  es: 'Proyectos',
+  en: 'Projects'
+};
+
+// Duplicate projects for seamless looping
+const duplicatedProjects = [...projects, ...projects];
+---
+
+<!-- Desktop: Vertical carousel on left (hidden on mobile) -->
+<div class="hidden lg:block fixed left-6 top-[5%] bottom-[calc(5%+100px)] w-80 overflow-hidden bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-r border-gray-200 dark:border-gray-700 z-40 rounded-r-lg shadow-lg">
+  <div class="carousel-container-vertical h-full">
+    <div class="carousel-track-vertical flex flex-col gap-6 py-8 px-4">
+      {duplicatedProjects.map((project) => (
+        <div class="carousel-item flex-shrink-0 h-80 group cursor-pointer">
+          <div class="relative h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full flex-1 object-cover"
+            />
+            <div class="bg-white dark:bg-gray-800 p-3 border-t border-gray-200 dark:border-gray-700">
+              <p class="text-gray-900 dark:text-white font-semibold text-sm line-clamp-2">{project.title}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- Mobile: Horizontal carousel (visible on mobile only) -->
+<div class="lg:hidden w-full bg-gray-50 dark:bg-gray-800 py-4 sm:py-6 px-4">
+  <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4 px-2">{translations[lang]}</h3>
+  <div class="carousel-container-horizontal overflow-x-hidden">
+    <div class="carousel-track-horizontal flex gap-4 px-2">
+      {duplicatedProjects.map((project) => (
+        <div class="carousel-item flex-shrink-0 h-56 w-44 group cursor-pointer">
+          <div class="relative h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              class="w-full flex-1 object-cover"
+            />
+            <div class="bg-white dark:bg-gray-800 p-2 border-t border-gray-200 dark:border-gray-700">
+              <p class="text-gray-900 dark:text-white font-semibold text-xs line-clamp-2">{project.title}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Desktop: Vertical carousel */
+  .carousel-container-vertical {
+    position: relative;
+  }
+
+  .carousel-track-vertical {
+    animation: scrollVertical 40s linear infinite;
+  }
+
+  @keyframes scrollVertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-50% - 72px));
+    }
+  }
+
+  .carousel-track-vertical:hover {
+    animation-play-state: paused;
+  }
+
+  /* Mobile: Horizontal carousel with smooth scroll */
+  .carousel-container-horizontal {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track-horizontal {
+    animation: scrollHorizontal 8s linear infinite;
+  }
+
+  @keyframes scrollHorizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50%));
+    }
+  }
+
+  .carousel-container-horizontal:hover .carousel-track-horizontal {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track-vertical {
+      animation: none;
+    }
+  }
+</style>

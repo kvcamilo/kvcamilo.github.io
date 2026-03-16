@@ -1,0 +1,54 @@
+{
+  "es": [
+    {
+      "id": "1",
+      "title": "Construyendo Aplicaciones React Escalables",
+      "summary": "Análisis profundo de patrones arquitectónicos y estrategias de gestión de estado",
+      "date": "2024-03-15",
+      "type": "article",
+      "url": "https://medium.com/@example"
+    },
+    {
+      "id": "2",
+      "title": "El Futuro del Rendimiento Web",
+      "summary": "Explorando Core Web Vitals y técnicas modernas de optimización",
+      "date": "2024-02-10",
+      "type": "article",
+      "url": "https://dev.to/@example"
+    },
+    {
+      "id": "3",
+      "title": "Patrones Avanzados de TypeScript",
+      "summary": "Guía integral sobre tipos de utilidad y tipos condicionales",
+      "date": "2024-01-20",
+      "type": "research",
+      "url": "https://blog.example.com"
+    }
+  ],
+  "en": [
+    {
+      "id": "1",
+      "title": "Building Scalable React Applications",
+      "summary": "Deep dive into architectural patterns and state management strategies",
+      "date": "2024-03-15",
+      "type": "article",
+      "url": "https://medium.com/@example"
+    },
+    {
+      "id": "2",
+      "title": "The Future of Web Performance",
+      "summary": "Exploring Core Web Vitals and modern optimization techniques",
+      "date": "2024-02-10",
+      "type": "article",
+      "url": "https://dev.to/@example"
+    },
+    {
+      "id": "3",
+      "title": "TypeScript Advanced Patterns",
+      "summary": "Comprehensive guide to utility types and conditional types",
+      "date": "2024-01-20",
+      "type": "research",
+      "url": "https://blog.example.com"
+    }
+  ]
+}

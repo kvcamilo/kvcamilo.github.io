@@ -1,0 +1,63 @@
+{
+  "frontend": [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Astro",
+    "Vue.js",
+    "CSS/SCSS",
+    "Tailwind CSS",
+    "Web Components",
+    "Responsive Design",
+    "Accessibility (WCAG)"
+  ],
+  "backend": [
+    "Node.js",
+    "Express",
+    "FastAPI",
+    "Python",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "REST APIs",
+    "GraphQL",
+    "Authentication & Authorization"
+  ],
+  "tools": [
+    "Git & GitHub",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Vercel",
+    "Netlify",
+    "GitHub Actions",
+    "npm/yarn",
+    "Webpack/Vite",
+    "ESLint & Prettier"
+  ],
+  "cloud": [
+    "AWS (EC2, S3, RDS, Lambda)",
+    "Google Cloud Platform",
+    "Azure",
+    "Serverless Architecture",
+    "CDN & Caching",
+    "Infrastructure as Code"
+  ],
+  "design": [
+    "UI/UX Design",
+    "Design Systems",
+    "Figma",
+    "Wireframing",
+    "User Research",
+    "Interaction Design"
+  ],
+  "languages": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "SQL",
+    "HTML",
+    "CSS",
+    "Bash"
+  ]
+}

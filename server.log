@@ -1,0 +1,18 @@
+
+> portfolio-astro@1.0.0 dev
+> astro dev
+
+16:46:34 [types] Generated 1ms
+16:46:34 [vite] Port 4321 is in use, trying another one...
+16:46:34 [vite] Port 4322 is in use, trying another one...
+
+ astro  v4.16.19 ready in 113 ms
+
+┃ Local    http://localhost:4323/
+┃ Network  use --host to expose
+
+16:46:35 watching for file changes...
+16:46:48 [ERROR] [postcss] <css input>: You cannot `@apply` the `hidden` utility here because it creates a circular dependency.
+  Stack trace:
+    at /home/gianni/Projects/portfolio-astro/src/styles/global.css
+    [...] See full stack trace in the browser, or rerun with --verbose.

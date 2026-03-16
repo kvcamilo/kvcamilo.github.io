@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Section from '../components/Section.astro';
+
+import esTranslations from '../data/i18n/es.json';
+import enTranslations from '../data/i18n/en.json';
+
+// Try to import contact data, use empty object as fallback
+let contact = { email: '', phone: '', social: {} };
+try {
+  const contactData = await import('../data/contact.json');
+  contact = contactData.default || contactData;
+} catch (error) {
+  // If contact.json doesn't exist, redirect to home
+  return Astro.redirect('/');
+}
+
+// Get language from cookies
+const cookieHeader = Astro.request.headers.get('cookie') || '';
+const langCookie = cookieHeader
+  .split('; ')
+  .find(row => row.startsWith('lang='))
+  ?.split('=')[1] || 'es';
+
+const currentLang = (langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+---
+
+<Layout title={`${t.contact.title}`} description={t.contact.intro}>
+  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+    <Section id="contact" title={t.contact.title}>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">{t.contact.intro}</p>
+    
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+      <!-- Contact Information -->
+      <div>
+        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-6">{currentLang === 'es' ? 'Información de contacto' : 'Contact Information'}</h3>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">✉️</span>
+            <div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{t.contact.email}</p>
+              <a href={`mailto:${contact.email}`} class="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400">{contact.email}</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📞</span>
+            <div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{t.contact.phone}</p>
+              <a href={`tel:${contact.phone}`} class="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400">{contact.phone}</a>
+            </div>
+          </div>
+          
+          {contact.social && (
+            <div class="flex items-start gap-4 pt-4">
+              <span class="text-2xl">🌐</span>
+              <div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">{currentLang === 'es' ? 'Redes sociales' : 'Social Links'}</p>
+                <div class="space-y-2">
+                  <a href={contact.social.github} target="_blank" rel="noopener" class="block text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400">GitHub</a>
+                  <a href={contact.social.linkedin} target="_blank" rel="noopener" class="block text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400">LinkedIn</a>
+                  <a href={contact.social.twitter} target="_blank" rel="noopener" class="block text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400">Twitter</a>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div>
+        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-6">{currentLang === 'es' ? 'Envíame un mensaje' : 'Send me a message'}</h3>
+        <form class="space-y-3 sm:space-y-4">
+          <div>
+            <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{currentLang === 'es' ? 'Nombre' : 'Name'}</label>
+            <input type="text" placeholder={currentLang === 'es' ? 'Tu nombre' : 'Your name'} class="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" />
+          </div>
+          
+          <div>
+            <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t.contact.email}</label>
+            <input type="email" placeholder="tu@email.com" class="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" />
+          </div>
+          
+          <div>
+            <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{currentLang === 'es' ? 'Asunto' : 'Subject'}</label>
+            <input type="text" placeholder={currentLang === 'es' ? '¿Sobre qué quieres hablar?' : 'What is this about?'} class="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white" />
+          </div>
+          
+          <div>
+            <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{currentLang === 'es' ? 'Mensaje' : 'Message'}</label>
+            <textarea rows="4" placeholder={currentLang === 'es' ? 'Tu mensaje...' : 'Your message...'} class="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm sm:text-base">
+            {currentLang === 'es' ? 'Enviar' : 'Send'}
+          </button>
+        </form>
+      </div>
+    </div>
+  </Section>
+  </div>
+
+  <BottomNav currentLang={currentLang} currentPage="contact" />
+</Layout>

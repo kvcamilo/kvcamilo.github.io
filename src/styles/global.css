@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode custom styles - explicitly defined */
+html.dark {
+  color-scheme: dark;
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+html.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+html.dark nav {
+  @apply bg-gray-800 border-gray-700;
+}
+
+html.dark section {
+  @apply bg-gray-900;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  @apply text-gray-100;
+}
+
+html.dark p {
+  @apply text-gray-300;
+}
+
+html.dark a {
+  @apply text-blue-400;
+}
+
+html.dark a:hover {
+  @apply text-blue-300;
+}
+
+html.dark input,
+html.dark textarea {
+  @apply bg-gray-800 text-white border-gray-600;
+}
+
+html.dark button {
+  transition: none;
+}
+
+/* Custom global styles */
+@layer base {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply text-gray-900 bg-white;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold leading-tight;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-blue-600 text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded hover:bg-gray-400;
+  }
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+/* Minimalist styles */
+@layer components {
+  /* Prose styles for better readability */
+  .prose a {
+    @apply text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline;
+  }
+
+  .prose p {
+    @apply mb-4 dark:text-gray-300;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* Card styles */
+  .card-base {
+    @apply rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-600;
+  }
+
+  /* Container max-width */
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  /* Responsive padding */
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Center flex */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  /* No scrollbar (for webkit browsers) */
+  .no-scrollbar::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Truncate text with ellipsis */
+  .line-clamp-1 {
+    @apply truncate;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Responsive images */
+img {
+  @apply max-w-full h-auto block;
+}
+
+/* Ensure proper stacking on mobile */
+@media (max-width: 768px) {
+  .md\:grid-cols-2 {
+    @apply grid-cols-1;
+  }
+
+  .lg\:grid-cols-3 {
+    @apply grid-cols-1 md:grid-cols-2;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply text-black bg-white;
+  }
+
+  a {
+    @apply text-blue-600;
+  }
+}

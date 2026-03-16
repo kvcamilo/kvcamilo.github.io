@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Section from '../components/Section.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+
+import esTranslations from '../data/i18n/es.json';
+import enTranslations from '../data/i18n/en.json';
+
+// Try to import required data, redirect to home if missing
+let profile, experience;
+try {
+  const profileData = await import('../data/profile.json');
+  const experienceData = await import('../data/experience.json');
+  profile = profileData.default || profileData;
+  experience = experienceData.default || experienceData;
+} catch (error) {
+  return Astro.redirect('/');
+}
+
+// Get language from cookies
+const cookieHeader = Astro.request.headers.get('cookie') || '';
+const langCookie = cookieHeader
+  .split('; ')
+  .find(row => row.startsWith('lang='))
+  ?.split('=')[1] || 'es';
+
+const currentLang = (langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+const profileData = profile[currentLang];
+const experienceData = experience[currentLang];
+---
+
+<Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio}>
+  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+    <Section id="about" title={t.about.title}>
+    <div class="max-w-none text-gray-700 dark:text-gray-400 mb-6 sm:mb-12">
+      <p class="mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">{t.about.bio}</p>
+      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.expertise}</h3>
+      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 mb-4 sm:mb-6 leading-relaxed">React, TypeScript, Node.js, Python, PostgreSQL, MongoDB, AWS, Docker</p>
+      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.interests}</h3>
+      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 leading-relaxed">Scalable architecture, open source, clean code, user experience</p>
+    </div>
+
+    <!-- Experience Section -->
+    <h3 class="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 mt-8 sm:mt-12">{t.experience?.title}</h3>
+    <div>
+      {experienceData.map((item) => (
+        <ExperienceItem
+          company={item.company}
+          role={item.role}
+          startDate={item.startDate}
+          endDate={item.endDate}
+          current={item.current}
+          summary={item.summary}
+        />
+      ))}
+    </div>
+  </Section>
+  </div>
+
+  <BottomNav currentLang={currentLang} currentPage="about" />
+</Layout>

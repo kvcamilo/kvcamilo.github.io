@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Section from '../components/Section.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+import esTranslations from '../data/i18n/es.json';
+import enTranslations from '../data/i18n/en.json';
+
+// Try to import required data, redirect to home if missing
+let research;
+try {
+  const researchData = await import('../data/research.json');
+  research = researchData.default || researchData;
+} catch (error) {
+  return Astro.redirect('/');
+}
+
+// Get language from cookies
+const cookieHeader = Astro.request.headers.get('cookie') || '';
+const langCookie = cookieHeader
+  .split('; ')
+  .find(row => row.startsWith('lang='))
+  ?.split('=')[1] || 'es';
+
+const currentLang = (langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+const researchData = research[currentLang];
+---
+
+<Layout title={`${t.research.title}`} description={t.research.subtitle}>
+  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+    <Section id="research" title={t.research.title} subtitle={t.research.subtitle}>
+    <div>
+      {researchData.map((article) => (
+        <ArticleCard
+          title={article.title}
+          summary={article.summary}
+          date={article.date}
+          url={article.url}
+          type={article.type}
+        />
+      ))}
+    </div>
+  </Section>
+  </div>
+
+  <BottomNav currentLang={currentLang} currentPage="research" />
+</Layout>

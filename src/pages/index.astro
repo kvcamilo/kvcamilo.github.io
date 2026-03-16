@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Section from '../components/Section.astro';
+import ProjectCarousel from '../components/ProjectCarousel.astro';
+
+import profile from '../data/profile.json';
+import projects from '../data/projects.json';
+import esTranslations from '../data/i18n/es.json';
+import enTranslations from '../data/i18n/en.json';
+
+// Get language from cookies
+const cookieHeader = Astro.request.headers.get('cookie') || '';
+const langCookie = cookieHeader
+  .split('; ')
+  .find(row => row.startsWith('lang='))
+  ?.split('=')[1] || 'es';
+
+const currentLang = (langCookie === 'en' ? 'en' : 'es') as 'es' | 'en';
+const t = currentLang === 'en' ? enTranslations : esTranslations;
+const profileData = profile[currentLang];
+const projectsData = projects[currentLang];
+---
+
+<Layout title={`${profileData.name} - ${profileData.role}`} description={profileData.bio_short}>
+  <!-- Main content area -->
+  <div class="flex flex-col lg:ml-96 max-h-[calc(100vh-80px)] overflow-y-auto">
+    <!-- Content section -->
+    <div class="flex flex-col items-center justify-center px-4 py-8 lg:py-0">
+      <!-- Home Section -->
+      <Section id="home" title="">
+        <!-- Profile Photo Circle -->
+        <div class="mb-8 flex items-center justify-center mt-24">
+          <div class="relative">
+            <img 
+              src="/images/brand-persona.jpg" 
+              alt={profileData.name}
+              class="w-48 h-48 rounded-full border-8 border-gray-200 dark:border-gray-800 object-cover shadow-lg"
+            />
+            <!-- Badge Icon -->
+            <div class="absolute bottom-0 right-0 w-16 h-16 bg-black rounded-full flex items-center justify-center shadow-lg">
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered Text Content -->
+        <div class="text-center w-full max-w-full px-4">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">{profileData.name}</h2>
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6">{profileData.role}</p>
+          <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">{profileData.bio_short}</p>
+          <div class="space-y-3 sm:space-y-4 text-sm sm:text-base">
+            <p class="text-gray-600 dark:text-gray-400">📍 {profileData.location}</p>
+            <p class="text-gray-600 dark:text-gray-400">✉️ <a href={`mailto:${profileData.email}`} class="text-blue-600 dark:text-blue-400 hover:underline">{profileData.email}</a></p>
+          </div>
+        </div>
+      </Section>
+    </div>
+
+    <!-- Project Carousel - Desktop on left, Mobile below profile -->
+    <ProjectCarousel projects={projectsData} lang={currentLang} />
+  </div>
+
+  <!-- Navigation Bar at Bottom -->
+  <BottomNav currentLang={currentLang} currentPage="home" />
+</Layout>
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>

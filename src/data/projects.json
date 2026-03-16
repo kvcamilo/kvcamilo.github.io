@@ -1,0 +1,82 @@
+{
+  "es": [
+    {
+      "id": "1",
+      "title": "Panel de Análisis",
+      "description": "Plataforma de visualización de datos en tiempo real para análisis SaaS",
+      "image": "/images/project-1.svg",
+      "tech": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      "year": 2024,
+      "featured": true,
+      "url": "https://example.com/analytics"
+    },
+    {
+      "id": "2",
+      "title": "Sistema de Diseño",
+      "description": "Biblioteca de componentes integral con más de 100 componentes",
+      "image": "/images/project-2.svg",
+      "tech": ["React", "TypeScript", "Storybook"],
+      "year": 2024,
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "API de Aplicación de Bienestar",
+      "description": "Backend Node.js para seguimiento de meditación y bienestar",
+      "image": "/images/project-3.svg",
+      "tech": ["Node.js", "MongoDB", "Redis"],
+      "year": 2023,
+      "featured": false,
+      "url": "https://example.com/wellness"
+    },
+    {
+      "id": "4",
+      "title": "Calculadora de Carbono",
+      "description": "Herramienta interactiva para medir emisiones de carbono",
+      "image": "/images/project-4.svg",
+      "tech": ["React", "Python", "FastAPI"],
+      "year": 2023,
+      "featured": true
+    }
+  ],
+  "en": [
+    {
+      "id": "1",
+      "title": "Analytics Dashboard",
+      "description": "Real-time data visualization platform for SaaS analytics",
+      "image": "/images/project-1.svg",
+      "tech": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      "year": 2024,
+      "featured": true,
+      "url": "https://example.com/analytics"
+    },
+    {
+      "id": "2",
+      "title": "Design System",
+      "description": "Comprehensive component library with 100+ components",
+      "image": "/images/project-2.svg",
+      "tech": ["React", "TypeScript", "Storybook"],
+      "year": 2024,
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Wellness App API",
+      "description": "Node.js backend for meditation and wellness tracking",
+      "image": "/images/project-3.svg",
+      "tech": ["Node.js", "MongoDB", "Redis"],
+      "year": 2023,
+      "featured": false,
+      "url": "https://example.com/wellness"
+    },
+    {
+      "id": "4",
+      "title": "Carbon Calculator",
+      "description": "Interactive tool for measuring carbon emissions",
+      "image": "/images/project-4.svg",
+      "tech": ["React", "Python", "FastAPI"],
+      "year": 2023,
+      "featured": true
+    }
+  ]
+}

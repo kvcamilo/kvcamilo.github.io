@@ -1,0 +1,18 @@
+{
+  "es": {
+    "name": "Alex Riva",
+    "role": "Desarrollador Full Stack",
+    "email": "hello@alexrivera.dev",
+    "location": "San Francisco, CA",
+    "bio_short": "Construyo experiencias digitales elegantes",
+    "avatar": "/images/avatar.png"
+  },
+  "en": {
+    "name": "Alex Riva",
+    "role": "Full Stack Developer",
+    "email": "hello@alexrivera.dev",
+    "location": "San Francisco, CA",
+    "bio_short": "Building elegant digital experiences asadsad asadsad asadsad asadsad asadsad asadsad asadsad asadsad asadsad asadsad asadsad asadsadasadsad asadsad asadsad asadsad asadsad asadsadasadsad asadsad asadsad asadsad asadsad asadsadasadsad asadsad asadsad asadsad asadsad asadsadasadsad asadsad asadsad asadsad asadsad asadsad",
+    "avatar": "/images/avatar.png"
+  }
+}

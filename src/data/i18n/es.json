@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "research": "Investigación",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "Hola, soy Alex Rivera",
+    "subtitle": "Full Stack Developer",
+    "tagline": "Construyo experiencias digitales elegantes con tecnología moderna",
+    "cta": "Ver mis trabajos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Soy un ingeniero full stack con 6+ años de experiencia construyendo soluciones escalables. Me apasiona la intersección entre tecnología y diseño centrado en el usuario.",
+    "expertise": "Mi especialidad",
+    "interests": "Intereses"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de mis trabajos recientes",
+    "view": "Ver más",
+    "repo": "Código"
+  },
+  "research": {
+    "title": "Investigación",
+    "subtitle": "Artículos y publicaciones sobre tecnología",
+    "readMore": "Leer más"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "current": "Actual"
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "¿Tienes un proyecto en mente? Me encantaría escucharte.",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "available": "Disponible para oportunidades"
+  },
+  "footer": {
+    "copyright": "© 2024 Alex Rivera. Todos los derechos reservados."
+  }
+}

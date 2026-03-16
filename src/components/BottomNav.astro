@@ -1,0 +1,134 @@
+---
+interface Props {
+  currentPage: string;
+  currentLang: 'es' | 'en';
+}
+
+const { currentPage, currentLang } = Astro.props;
+
+const translations = {
+  es: { 
+    home: 'Inicio', 
+    about: 'Sobre mí', 
+    projects: 'Proyectos', 
+    research: 'Investigación', 
+    contact: 'Contacto'
+  },
+  en: { 
+    home: 'Home', 
+    about: 'About', 
+    projects: 'Projects', 
+    research: 'Research', 
+    contact: 'Contact'
+  },
+};
+
+const t = translations[currentLang];
+
+const isActive = (page: string) => currentPage === page;
+
+// Define page structure with required JSON files
+const pageDefinitions = [
+  { id: 'home', path: '/', icon: '🏠', requiredFiles: ['profile.json'] },
+  { id: 'about', path: '/about/', icon: '👤', requiredFiles: ['profile.json', 'experience.json'] },
+  { id: 'projects', path: '/projects/', icon: '📁', requiredFiles: ['projects.json'] },
+  { id: 'research', path: '/research/', icon: '📚', requiredFiles: ['research.json'] },
+  { id: 'contact', path: '/contact/', icon: '✉️', requiredFiles: ['contact.json'] },
+];
+
+// Get all available data files
+const dataFiles = import.meta.glob('/src/data/*.json', { eager: false });
+const availableFiles = Object.keys(dataFiles).map(path => {
+  const filename = path.split('/').pop() || '';
+  return filename;
+});
+
+// Filter pages to show only those with all required files present
+const enabledPages = pageDefinitions.filter(page => 
+  page.requiredFiles.every(file => availableFiles.includes(file))
+);
+---
+
+<nav class="fixed bottom-0 left-0 right-0 w-full bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-[9999]">
+  <div class="max-w-full px-4 py-3">
+    <div class="flex justify-around items-center gap-2">
+      {enabledPages.map((page) => (
+        <a
+          href={page.path}
+          class={`flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded transition-colors flex flex-col items-center gap-1 ${
+            isActive(page.id)
+              ? 'text-gray-900 dark:text-white'
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+          }`}
+        >
+          <span class="text-lg">{page.icon}</span>
+          <span class="hidden sm:inline">{t[page.id as keyof typeof t]}</span>
+        </a>
+      ))}
+      <button
+        id="langToggle"
+        class="flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded flex flex-col items-center gap-1 text-gray-500 hover:text-gray-700 cursor-pointer dark:text-gray-400 dark:hover:text-gray-200"
+        title={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      >
+        <span class="text-lg">🌐</span>
+        <span class="hidden sm:inline" data-lang-toggle="true">
+          {currentLang === 'es' ? 'EN' : 'ES'}
+        </span>
+      </button>
+      <button
+        id="themeToggle"
+        class="flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded flex flex-col items-center gap-1 text-gray-500 hover:text-gray-700 cursor-pointer dark:text-gray-400 dark:hover:text-gray-200"
+        title="Cambiar tema"
+      >
+        <span class="text-lg">☀️</span>
+        <span class="hidden sm:inline">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Theme toggle - force visual update
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      
+      console.log('Current theme before toggle:', isDark ? 'dark' : 'light');
+      
+      // Toggle the class
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        console.log('Switched to light theme');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        console.log('Switched to dark theme');
+      }
+      
+      // Force repaint
+      void html.offsetHeight;
+      
+      console.log('Theme after toggle:', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  }
+
+  // Language toggle
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function() {
+      const cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('lang='))
+        ?.split('=')[1];
+      
+      const currentLang = cookieValue || 'es';
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      
+      document.cookie = `lang=${newLang}; path=/; max-age=${365 * 24 * 60 * 60}`;
+      window.location.reload();
+    });
+  }
+</script>
