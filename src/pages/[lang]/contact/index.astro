@@ -36,7 +36,7 @@ const contact = contactObj[currentLang] || { email: '', phone: '', social: {} };
 ---
 
 <Layout title={`${t.contact.title}`} description={t.contact.intro} lang={currentLang}>
-  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+  <div class="h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
     <Section id="contact" title={t.contact.title}>
     <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">{t.contact.intro}</p>
     
