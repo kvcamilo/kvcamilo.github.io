@@ -2,53 +2,75 @@
   "es": [
     {
       "id": "1",
-      "title": "Construyendo Aplicaciones React Escalables",
-      "summary": "Análisis profundo de patrones arquitectónicos y estrategias de gestión de estado",
-      "date": "2024-03-15",
+      "title": "Inheriting subsidies: Intergenerational correlation in Conditional Cash Transfers in Colombia. World Development Perspectives",
+      "summary": "Mediante el empleo de un enfoque de métodos mixtos, el estudio pretende establecer relaciones causales respecto a la transmisión de la dependencia de los subsidios entre generaciones. Nuestros hallazgos a partir de las estimaciones cuantitativas revelan una correlación significativa y causal entre la participación de los padres y la de los hijos en el programa MFA.",
+      "date": "2025-12-01",
       "type": "article",
-      "url": "https://medium.com/@example"
+      "url": "https://www.sciencedirect.com/science/article/pii/S245229292500089X?via%3Dihub"
     },
     {
       "id": "2",
-      "title": "El Futuro del Rendimiento Web",
-      "summary": "Explorando Core Web Vitals y técnicas modernas de optimización",
-      "date": "2024-02-10",
+      "title": "The effects of conditional cash transfers on schooling and child labor of nonbeneficiary
+siblings. International Journal of Educational Development",
+      "summary": "En este artículo se evalúa la existencia de efectos indirectos del programa «Más Familias en Acción» en los niños que cumplen los requisitos pero que no son beneficiarios de la ayuda, mientras que sus hermanos sí lo son. Mediante un diseño no experimental, hemos observado un efecto negativo en la matriculación escolar de los hermanos no beneficiarios.",
+      "date": "2022-03-10",
       "type": "article",
-      "url": "https://dev.to/@example"
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0738059321001929?via%3Dihub"
     },
     {
       "id": "3",
-      "title": "Patrones Avanzados de TypeScript",
-      "summary": "Guía integral sobre tipos de utilidad y tipos condicionales",
-      "date": "2024-01-20",
+      "title": "Wake up and smell the coffee: Challenges and opportunities for better
+price transmission along the coffee value chain of El Salvador",
+      "summary": "El estudio aporta mayor transparencia a los costes y al valor añadido a lo largo de la cadena de valor del café, además de identificar las deficiencias y limitaciones que hacen que los pequeños y medianos agricultores sigan sumidos en la pobreza y la inseguridad alimentaria, con el fin de formular recomendaciones de actuación política.",
+      "date": "2022-08-20",
       "type": "research",
-      "url": "https://blog.example.com"
+      "url": "https://alliancebioversityciat.org/publications-data/wake-and-smell-coffee-challenges-and-opportunities-better-price-transmission"
+    },
+    {
+      "id": "4",
+      "title": "Farmscape Composition and Livelihood Sustainability in Defor- ested Landscapes of Colombian Amazonia. Agriculture",
+      "summary": "Este artículo aplica un enfoque de sostenibilidad basado en el Marco de Recursos para Medios de Vida Rurales Sostenibles (SLF). Hemos propuesto un índice de sostenibilidad (IS) para dos paisajes en los que predominan dos sistemas agrícolas: la ganadería y la agricultura familiar a pequeña escala. medida de sostenibilidad.",
+      "date": "2020-11-26",
+      "type": "research",
+      "url": "https://www.mdpi.com/2077-0472/10/12/588"
     }
+
   ],
   "en": [
     {
       "id": "1",
-      "title": "Building Scalable React Applications",
-      "summary": "Deep dive into architectural patterns and state management strategies",
-      "date": "2024-03-15",
+      "title": "Inheriting subsidies: Intergenerational correlation in Conditional Cash Transfers in Colombia. World Development Perspectives",
+      "summary": "Using a mixed-methods approach, this study aims to identify causal relationships regarding the intergenerational transmission of benefit dependency. Our findings, based on quantitative estimates, reveal a significant and causal correlation between parental and child participation in the MFA program.",
+      "date": "2025-12-01",
       "type": "article",
-      "url": "https://medium.com/@example"
+      "url": "https://www.sciencedirect.com/science/article/pii/S245229292500089X?via%3Dihub"
     },
     {
       "id": "2",
-      "title": "The Future of Web Performance",
-      "summary": "Exploring Core Web Vitals and modern optimization techniques",
-      "date": "2024-02-10",
+      "title": "The effects of conditional cash transfers on schooling and child labor of nonbeneficiary
+siblings. International Journal of Educational Development",
+      "summary": "This paper evaluates the existence of spillover effects of the “Más Familias en Acción” program on eligible children who are not beneficiaries of the subsidy while their siblings are. Using a nonexperimental design we found a negative effect on the school enrollment of nonbeneficiary siblings.",
+      "date": "2022-03-10",
       "type": "article",
-      "url": "https://dev.to/@example"
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0738059321001929?via%3Dihub"
     },
     {
       "id": "3",
-      "title": "TypeScript Advanced Patterns",
-      "summary": "Comprehensive guide to utility types and conditional types",
-      "date": "2024-01-20",
+      "title": "Wake up and smell the coffee: Challenges and opportunities for better
+price transmission along the coffee value chain of El Salvador",
+      "summary": "The study provides greater transparency regarding costs and value added throughout the coffee value chain, while also identifying the shortcomings and constraints that keep small and medium-sized farmers mired in poverty and food insecurity, with the aim of formulating policy recommendations.",
+      "date": "2022-08-20",
       "type": "research",
-      "url": "https://blog.example.com"
+      "url": "https://alliancebioversityciat.org/publications-data/wake-and-smell-coffee-challenges-and-opportunities-better-price-transmission"
+    },
+    {
+      "id": "4",
+      "title": "Farmscape Composition and Livelihood Sustainability in Defor- ested Landscapes of Colombian Amazonia. Agriculture",
+      "summary": "This article operationalizes a sustainability framing based on the Sustainable Rural Livelihood Resources Framework (SLF). We proposed a sustainability index (SI) for two landscapes dominated by two agricultural systems: cattle ranching and small-scale family agriculture. sustainability measure.",
+      "date": "2020-11-26",
+      "type": "research",
+      "url": "https://www.mdpi.com/2077-0472/10/12/588"
     }
   ]
 }
+
