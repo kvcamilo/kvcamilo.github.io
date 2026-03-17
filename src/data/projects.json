@@ -5,7 +5,7 @@
       "title": "CGIAR Climate Action program",
       "description": "El Programa de Acción Climática impulsará la ciencia, la innovación y la colaboración para transformar los sistemas alimentarios, terrestres e hídricos (FLW) con el fin de lograr un futuro resiliente al cambio climático, con cero emisiones netas y equitativo.",
       "image": "/images/clima.jpg",
-      "skills": ["Traducción de objetivos de acción climática en soluciones analíticas","Diseño de herramientas basadas en datos para toma de decisiones","Integración de información en sistemas complejos"],
+      "tech": ["Traducción de objetivos de acción climática en soluciones analíticas","Diseño de herramientas basadas en datos para toma de decisiones","Integración de información en sistemas complejos"],
       "year": "2025",
       "featured": false,
       "url": "https://www.cgiar.org/cgiar-research-portfolio-2025-2030/climate-action"
@@ -15,7 +15,7 @@
       "title": "Mitigate+: Low-Emission Food Systems",
       "description": "La iniciativa «Mitigate+: Sistemas alimentarios con bajas emisiones» tiene como objetivo reducir las emisiones de gases de efecto invernadero (GEI) de los sistemas alimentarios en los países destinatarios en 1,1 gigatoneladas al año (un 6,5 %) para 2030, mitigando así el impacto previsto del cambio climático en el desarrollo sostenible y la equidad social.",
       "image": "/images/mitigate.jpg",
-      "skills": ["Análisis de indicadores de impacto (GEI, sostenibilidad)","Traducción de métricas complejas en información accionable","Apoyo a la toma de decisiones basada en evidencia"],
+      "tech": ["Análisis de indicadores de impacto (GEI, sostenibilidad)","Traducción de métricas complejas en información accionable","Apoyo a la toma de decisiones basada en evidencia"],
       "year": "2024",
       "featured": true,
       "url": "https://cgspace.cgiar.org/items/57cd70d5-2935-481d-af89-1beae63483e9"
@@ -25,7 +25,7 @@
       "title": "MOCCA",
       "description": "El proyecto «Maximizing Opportunities in Coffee and Cacao in the Americas» (MOCCA) es una iniciativa de siete años de duración, financiada por el programa «Food for Progress» del Departamento de Agricultura de los Estados Unidos y liderada por Technoserve como coordinador del consorcio, cuyo objetivo es ayudar a más de 100 000 agricultores a superar los obstáculos que limitan su capacidad para rehabilitar y renovar eficazmente sus plantaciones de café y cacao en Guatemala, El Salvador, Honduras, Nicaragua, Ecuador y Perú.",
       "image": "/images/mocca3.jpg",
-      "skills": ["Análisis de cadenas de valor de café y cacao","Trabajo con actores de cooperación internacional","Diseño de soluciones centradas en productores"],
+      "tech": ["Análisis de cadenas de valor de café y cacao","Trabajo con actores de cooperación internacional","Diseño de soluciones centradas en productores"],
       "year": "2020-2024",
       "featured": true,
       "url": "https://lwr.org/technical-resources/cocoa-led-development-maximizing-opportunities-coffee-and-cacao-americas-mocca"
@@ -35,7 +35,7 @@
       "title": "Proyecto con Consejo Salvadoreño del Café & BID",
       "description": "Aportar mayor transparencia a los costes y al valor añadido a lo largo de la cadena de valor del café, además de identificar las deficiencias y limitaciones que hacen que los pequeños y medianos agricultores sigan sumidos en la pobreza y la inseguridad alimentaria, con el fin de formular recomendaciones de actuación política",
       "image": "/images/cafe.jpg",
-      "skills": ["Análisis de estructuras de costos en cadenas agrícolas","Generación de evidencia para política pública","Identificación de brechas en ingresos y productividad"],
+      "tech": ["Análisis de estructuras de costos en cadenas agrícolas","Generación de evidencia para política pública","Identificación de brechas en ingresos y productividad"],
       "year": "2020-2024",
       "featured": true
     },
@@ -44,7 +44,7 @@
       "title": "Capacitación para recolección de encuestas",
       "description": "Capacitación a encuestadores para el levantamiento de información en diferentes países de latinoamerica",
       "image": "/images/equipo3.jpeg",
-      "skills": ["Trabajo con equipos multidisciplinares","Encuestas adaptadas al contexto","Ética en aplicación de encuestas"],
+      "tech": ["Trabajo con equipos multidisciplinares","Encuestas adaptadas al contexto","Ética en aplicación de encuestas"],
       "year": "2020-2024",
       "featured": true
     }
@@ -55,7 +55,7 @@
       "title": "CGIAR Climate Action program",
       "description": "The Climate Action Program will drive science, innovation and collaboration to transform food, land and water (FLW) systems for a climate-resilient, net-zero and equitable future.",
       "image": "/images/clima.jpg",
-      "skills": ["Translating climate action goals into analytical solutions", "Designing data-driven tools for decision-making", "Integrating information into complex systems"],
+      "tech": ["Translating climate action goals into analytical solutions", "Designing data-driven tools for decision-making", "Integrating information into complex systems"],
       "year": "2025",
       "featured": false,
       "url": "https://www.cgiar.org/cgiar-research-portfolio-2025-2030/climate-action"
@@ -65,7 +65,7 @@
       "title": "Mitigate+: Low-Emission Food Systems",
       "description": "The Mitigate+: Low-Emission Food Systems Initiative focuses on reducing GHGE from food systems in target countries by 1.1 gigatons per year (6.5 percent) by 2030, thus mitigating  the predicted impact of climate change on sustainable development and social equity.",
       "image": "/images/mitigate.jpg",
-      "skills": ["Analysis of impact indicators (GHG, sustainability)", "Translating complex metrics into actionable insights", "Supporting evidence-based decision-making"],
+      "tech": ["Analysis of impact indicators (GHG, sustainability)", "Translating complex metrics into actionable insights", "Supporting evidence-based decision-making"],
       "year": "2024",
       "featured": true,
       "url": "https://cgspace.cgiar.org/items/57cd70d5-2935-481d-af89-1beae63483e9"
@@ -75,7 +75,7 @@
       "title": "MOCCA",
       "description": "The Maximizing Opportunities in Coffee and Cacao in the Americas (MOCCA) project is a seven-year initiative, funded by the U.S. Department of Agriculture’s Food for Progress Program with Technoserve as consortium lead, aimed at helping more than 100,000 farmers overcome the barriers limiting their capacity to effectively rehabilitate and renovate their coffee and cacao plants in Guatemala, El Salvador, Honduras, Nicaragua, Ecuador and Peru",
       "image": "/images/mocca3.jpg",
-      "skills": ["Analysis of coffee and cocoa value chains", "Working with international cooperation actors", "Designing producer-centered solutions"],
+      "tech": ["Analysis of coffee and cocoa value chains", "Working with international cooperation actors", "Designing producer-centered solutions"],
       "year": "2020-2024",
       "featured": true,
       "url": "https://lwr.org/technical-resources/cocoa-led-development-maximizing-opportunities-coffee-and-cacao-americas-mocca"
@@ -85,7 +85,7 @@
       "title": "Proyecto con Consejo Salvadoreño del Café & BID",
       "description": "To provide greater transparency regarding costs and value added throughout the coffee value chain, as well as to identify the shortcomings and constraints that keep small and medium-sized farmers trapped in poverty and food insecurity, with the aim of formulating policy recommendations",
       "image": "/images/cafe.jpg",
-      "skills": ["Analysis of cost structures in agricultural value chains", "Generating evidence for public policy", "Identifying gaps in income and productivity"],
+      "tech": ["Analysis of cost structures in agricultural value chains", "Generating evidence for public policy", "Identifying gaps in income and productivity"],
       "year": "2020-2024",
       "featured": true
     },
@@ -94,7 +94,7 @@
       "title": "Capacitación para recolección de encuestas",
       "description": "Capacitación a encuestadores para el levantamiento de información en diferentes países de latinoamerica",
       "image": "/images/equipo3.jpeg",
-      "skills": ["Trabajo con equipos multidisciplinares","Encuestas adaptadas al contexto","Ética en aplicación de encuestas"],
+      "tech": ["Trabajo con equipos multidisciplinares","Encuestas adaptadas al contexto","Ética en aplicación de encuestas"],
       "year": "2020-2024",
       "featured": true
     }
