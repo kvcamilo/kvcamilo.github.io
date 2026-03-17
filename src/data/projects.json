@@ -65,7 +65,7 @@
       "title": "Mitigate+: Low-Emission Food Systems",
       "description": "The Mitigate+: Low-Emission Food Systems Initiative focuses on reducing GHGE from food systems in target countries by 1.1 gigatons per year (6.5 percent) by 2030, thus mitigating  the predicted impact of climate change on sustainable development and social equity.",
       "image": "/images/mitigate.JPG",
-      "tech": ["Analysis of impact indicators (GHG, sustainability)", "Translating complex metrics into actionable insights", "Supporting evidence-based decision-making"],
+      "skills": ["Analysis of impact indicators (GHG, sustainability)", "Translating complex metrics into actionable insights", "Supporting evidence-based decision-making"],
       "year": 2024,
       "featured": true,
       "url": "https://cgspace.cgiar.org/items/57cd70d5-2935-481d-af89-1beae63483e9"
@@ -75,7 +75,7 @@
       "title": "MOCCA",
       "description": "The Maximizing Opportunities in Coffee and Cacao in the Americas (MOCCA) project is a seven-year initiative, funded by the U.S. Department of Agriculture’s Food for Progress Program with Technoserve as consortium lead, aimed at helping more than 100,000 farmers overcome the barriers limiting their capacity to effectively rehabilitate and renovate their coffee and cacao plants in Guatemala, El Salvador, Honduras, Nicaragua, Ecuador and Peru",
       "image": "/images/mocca3.JPG",
-      "tech": ["Analysis of coffee and cocoa value chains", "Working with international cooperation actors", "Designing producer-centered solutions"],
+      "skills": ["Analysis of coffee and cocoa value chains", "Working with international cooperation actors", "Designing producer-centered solutions"],
       "year": "2020-2024",
       "featured": true,
       "url": "https://lwr.org/technical-resources/cocoa-led-development-maximizing-opportunities-coffee-and-cacao-americas-mocca"
@@ -85,7 +85,7 @@
       "title": "Proyecto con Consejo Salvadoreño del Café & BID",
       "description": "To provide greater transparency regarding costs and value added throughout the coffee value chain, as well as to identify the shortcomings and constraints that keep small and medium-sized farmers trapped in poverty and food insecurity, with the aim of formulating policy recommendations",
       "image": "/images/cafe.JPG",
-      "tech": ["Analysis of cost structures in agricultural value chains", "Generating evidence for public policy", "Identifying gaps in income and productivity"],
+      "skills": ["Analysis of cost structures in agricultural value chains", "Generating evidence for public policy", "Identifying gaps in income and productivity"],
       "year": "2020-2024",
       "featured": true
     },
