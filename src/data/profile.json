@@ -1,18 +1,18 @@
 {
   "es": {
-    "name": "Gianni A.",
-    "role": "Desarrollador Full Stack",
-    "email": "hello@alexrivera.dev",
-    "location": "San Francisco, CA",
-    "bio_short": "Ingeniero de Sistemas con pasión por el desarrollo full stack y DevOps. Con experiencia en Azure, CI/CD y automatización de procesos. Diseño soluciones eficientes, seguras y escalables.",
-    "avatar": "/images/avatar.png"
+    "name": "Karen Camilo",
+    "role": "Investigación en economía del desarrollo",
+    "email": "ckarenvaleria@gmail.com",
+    "location": "Cali, Colombia",
+    "bio_short": "Máster en Economía con experiencia en investigacion sobre el desarrollo y la forma en que la economía puede contribuir a mejorar el bienestar de las personas.",
+    "avatar": "/images/profile.jpeg"
   },
   "en": {
-    "name": "Gianni A.",
-    "role": "Full Stack Developer",
-    "email": "hello@alexrivera.dev",
-    "location": "San Francisco, CA",
-    "bio_short": "Systems Engineer focused on full stack development and DevOps. Experienced in Azure, CI/CD and process automation. Building efficient, secure and scalable solutions.",
-    "avatar": "/images/avatar.png"
+    "name": "Karen Camilo",
+    "role": "Research in development economics",
+    "email": "ckarenvaleria@gmail.com",
+    "location": "Cali, Colombia",
+    "bio_short": "Master's degree in Economics with experience in research on development and how economics can help improve the well-being of the most disadvantaged people.",
+    "avatar": "/images/profile.jpeg"
   }
 }
