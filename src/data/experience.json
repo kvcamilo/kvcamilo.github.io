@@ -2,41 +2,78 @@
   "es": [
     {
       "id": "1",
-      "company": "TechCorp",
-      "role": "Ingeniero Senior Full Stack",
-      "startDate": "2022-06",
+      "company": "Centro Internacional de Agricultura Tropical",
+      "role": "Asociado de investigación",
+      "startDate": "2021-05",
       "endDate": null,
       "current": true,
-      "summary": "Liderando la arquitectura y desarrollo de productos SaaS escalables"
+      "summary": "Diseño e implementación de estudios para la evaluación de impacto y/o análisis de contribución de programas de desarrollo. Manejo, limpieza y análisis de bases de datos"
     },
     {
       "id": "2",
-      "company": "StartupHub",
-      "role": "Desarrollador Full Stack",
-      "startDate": "2020-03",
-      "endDate": "2022-05",
+      "company": "Universidad Icesi",
+      "role": "Docente Universitario",
+      "startDate": "2023-07",
+      "endDate": "2024-07",
       "current": false,
-      "summary": "Construí aplicaciones full-stack para múltiples empresas en etapa inicial"
+      "summary": "Desarrollar clases magistrales del curso de principios de economía. Resolución de dudas y acompamiento al estudiantado"
+    },
+    {
+      "id": "3",
+      "company": "ProPacifico",
+      "role": "Asociado de investigación",
+      "startDate": "2021-01",
+      "endDate": "2021-05",
+      "current": false,
+      "summary": "Análisis y monitoreo del cumplimiento de los planes de desarrollo territoriales"
+    },
+    {
+      "id": "4",
+      "company": "Universidad Icesi",
+      "role": "Asistente de investigación",
+      "startDate": "2018-07",
+      "endDate": "2020-05",
+      "current": false,
+      "summary": "Estimación de modelos Probit empleando la metodología de Lewbel para evaluar dependencia intergeneraconalRevisión a partir de encuesta a 400 hogares en Buenaventura"
     }
   ],
   "en": [
     {
       "id": "1",
-      "company": "TechCorp",
-      "role": "Senior Full Stack Engineer",
-      "startDate": "2022-06",
+      "company": "International Center for Tropical Agriculture",
+      "role": "Research Associate",
+      "startDate": "2021-05",
       "endDate": null,
       "current": true,
-      "summary": "Leading architecture and development of scalable SaaS products"
+      "summary": "Design and implementation of studies for impact assessment and/or contribution analysis of development programs. Database management, cleaning, and analysis"
     },
     {
       "id": "2",
-      "company": "StartupHub",
-      "role": "Full Stack Developer",
-      "startDate": "2020-03",
-      "endDate": "2022-05",
+      "company": "Icesi University",
+      "role": "University Professor",
+      "startDate": "2023-07",
+      "endDate": "2024-07",
       "current": false,
-      "summary": "Built full-stack applications for multiple early-stage companies"
+      "summary": "Developing lectures for the Principles of Economics course. Answering student questions and providing academic support"
+    },
+    {
+      "id": "3",
+      "company": "ProPacifico",
+      "role": "Research Associate",
+      "startDate": "2021-01",
+      "endDate": "2021-05",
+      "current": false,
+      "summary": "Analysis and monitoring of compliance with territorial development plans"
+    },
+    {
+      "id": "4",
+      "company": "Icesi University",
+      "role": "Research Assistant",
+      "startDate": "2018-07",
+      "endDate": "2020-05",
+      "current": false,
+      "summary": "Estimation of Probit models using Lewbel's methodology to assess intergenerational dependency: Analysis based on a survey of 400 households in Buenaventura"
     }
   ]
 }
+
