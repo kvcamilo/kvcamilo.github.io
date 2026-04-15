@@ -20,28 +20,28 @@
     "interests": "Intereses"
   },
   "projects": {
-    "title": "Proyectos",
-    "subtitle": "Una selección de mis trabajos recientes",
-    "view": "Ver más",
-    "repo": "Código"
+    "title": "Projects",
+    "subtitle": "A selection of my recent work",
+    "view": "See more",
+    "repo": "Code"
   },
   "research": {
-    "title": "Investigación",
-    "subtitle": "Artículos y publicaciones",
-    "readMore": "Leer más"
+    "title": "Research",
+    "subtitle": "Articles and publications",
+    "readMore": "Read more"
   },
   "experience": {
-    "title": "Experiencia",
-    "current": "Actual"
+    "title": "Experience",
+    "current": "Current"
   },
   "contact": {
-    "title": "Contacto",
-    "intro": "¿Tienes un proyecto en mente? Me encantaría escucharte.",
-    "email": "Correo",
-    "phone": "Teléfono",
-    "available": "Disponible para oportunidades"
+    "title": "Contact",
+    "intro": "Do you have a project in mind? I’d love to hear from you.",
+    "email": "Email",
+    "phone": "Phone",
+    "available": "Available for opportunities"
   },
   "footer": {
-    "copyright": "© 2024 Karen Camilo. Todos los derechos reservados."
+    "copyright": "© 2024 Karen Camilo. All rights reserved."
   }
 }
