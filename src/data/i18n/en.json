@@ -7,25 +7,25 @@
     "contact": "Contact",
     "language": "Language"
  },
-  “home”: {
+  “home”:{
     “title”: “Hello, I'm Karen Valeria”,
     “subtitle”: “Master's degree in economics”,
     “tagline”: “I analyze quantitative and qualitative data for decision-making and project evaluation”,
     “cta”: “View my work”
   },
-  “about”: {
+  “about”:{
     “title”: “About me”,
     “bio”: "Economist with over 7 years of experience in socioeconomic data analysis, impact assessment, and applied statistical modeling. Experience in processing and analyzing household surveys, constructing indicators, and preparing technical reports for decision-making.",
     “expertise”: “My Specialization”,
     “interests”: “Interests”
   },
-  “projects”: {
+  “projects”:{
     “title”: “Projects”,
     “subtitle”: “A selection of my recent work”,
     “view”: “See more”,
     “repo”: “Code”
   },
-  “research”: {
+  “research”:{
     “title”: “Research”,
     “subtitle”: “Articles and publications”,
     “readMore”: “Read more”
@@ -34,7 +34,7 @@
     “title”: “Experience”,
     “current”: “Current”
   },
-  “contact”: {
+  “contact”:{
     “title”: “Contact”,
     “intro”: "Do you have a project in mind? I’d love to hear from you.",
     “email”: “Email”,
