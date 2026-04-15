@@ -3,7 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "research": "Investigación",
+    "research": "Publicaciones",
     "contact": "Contacto",
     "language": "Idioma"
   },
@@ -15,7 +15,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "bio": "Economista con más de 4 años de experiencia en análisis de datos socioeconómicos, evaluación de impacto y modelación estadística aplicada. Experiencia en procesamiento y análisis de encuestas a hogares, construcción de indicadores y elaboración de informes técnicos para la toma de decisiones.",
+    "bio": "Economista con más de 7 años de experiencia en análisis de datos socioeconómicos, evaluación de impacto y modelación estadística aplicada. Experiencia en procesamiento y análisis de encuestas a hogares, construcción de indicadores y elaboración de informes técnicos para la toma de decisiones.",
     "expertise": "Mi especialidad",
     "interests": "Intereses"
   },
@@ -42,6 +42,6 @@
     "available": "Disponible para oportunidades"
   },
   "footer": {
-    "copyright": "© 2024 Alex Rivera. Todos los derechos reservados."
+    "copyright": "© 2024 Karen Camilo. Todos los derechos reservados."
   }
 }
