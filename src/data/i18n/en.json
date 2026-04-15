@@ -6,42 +6,42 @@
     "research": "Research",
     "contact": "Contact",
     "language": "Language"
+ },
+  “home”: {
+    “title”: “Hello, I'm Karen Valeria”,
+    “subtitle”: “Master's degree in economics”,
+    “tagline”: “I analyze quantitative and qualitative data for decision-making and project evaluation”,
+    “cta”: “View my work”
   },
-  "home": {
-    "title": "Hi, I'm Alex Rivera",
-    "subtitle": "Full Stack Developer",
-    "tagline": "Building elegant digital experiences with modern technology",
-    "cta": "View my work"
+  “about”: {
+    “title”: “About me”,
+    “bio”: "Economist with over 7 years of experience in socioeconomic data analysis, impact assessment, and applied statistical modeling. Experience in processing and analyzing household surveys, constructing indicators, and preparing technical reports for decision-making.",
+    “expertise”: “My Specialization”,
+    “interests”: “Interests”
   },
-  "about": {
-    "title": "About Me",
-    "bio": "I'm a full stack engineer with 6+ years of experience building scalable solutions. I'm passionate about the intersection of technology and human-centered design.",
-    "expertise": "My specialty",
-    "interests": "Interests"
+  “projects”: {
+    “title”: “Projects”,
+    “subtitle”: “A selection of my recent work”,
+    “view”: “See more”,
+    “repo”: “Code”
   },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "A selection of my recent work",
-    "view": "View more",
-    "repo": "Code"
+  “research”: {
+    “title”: “Research”,
+    “subtitle”: “Articles and publications”,
+    “readMore”: “Read more”
   },
-  "research": {
-    "title": "Research",
-    "subtitle": "Articles and publications",
-    "readMore": "Read more"
+  “experience”: {
+    “title”: “Experience”,
+    “current”: “Current”
   },
-  "experience": {
-    "title": "Experience",
-    "current": "Current"
+  “contact”: {
+    “title”: “Contact”,
+    “intro”: "Do you have a project in mind? I’d love to hear from you.",
+    “email”: “Email”,
+    “phone”: “Phone”,
+    “available”: “Available for opportunities”
   },
-  "contact": {
-    "title": "Contact",
-    "intro": "Have a project in mind? I'd love to hear from you.",
-    "email": "Email",
-    "phone": "Phone",
-    "available": "Available for opportunities"
-  },
-  "footer": {
-    "copyright": "© 2024 Alex Rivera. All rights reserved."
+  “footer”: {
+    “copyright”: "© 2024 Karen Camilo. All rights reserved."
   }
 }
