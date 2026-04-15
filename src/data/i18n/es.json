@@ -8,14 +8,14 @@
     "language": "Idioma"
   },
   "home": {
-    "title": "Hola, soy Alex Rivera",
-    "subtitle": "Full Stack Developer",
-    "tagline": "Construyo experiencias digitales elegantes con tecnología moderna",
+    "title": "Hola, soy Karen Valeria",
+    "subtitle": "Magíster en economía",
+    "tagline": "Analizo información cuantitativa y cualitativa para la toma de decisiones y evaluación de proyectos",
     "cta": "Ver mis trabajos"
   },
   "about": {
     "title": "Sobre mí",
-    "bio": "Soy un ingeniero full stack con 6+ años de experiencia construyendo soluciones escalables. Me apasiona la intersección entre tecnología y diseño centrado en el usuario.",
+    "bio": "Economista con más de 4 años de experiencia en análisis de datos socioeconómicos, evaluación de impacto y modelación estadística aplicada. Experiencia en procesamiento y análisis de encuestas a hogares, construcción de indicadores y elaboración de informes técnicos para la toma de decisiones.",
     "expertise": "Mi especialidad",
     "interests": "Intereses"
   },
