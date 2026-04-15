@@ -7,41 +7,41 @@
     "contact": "Contact",
     "language": "Language"
  },
-  “home”:{
-    “title”: “Hello, I'm Karen Valeria”,
-    “subtitle”: “Master's degree in economics”,
-    “tagline”: “I analyze quantitative and qualitative data for decision-making and project evaluation”,
-    “cta”: “View my work”
+ "home": {
+    "title": “Hello, I'm Karen Valeria",
+    "subtitle": "Master's degree in economics",
+    "tagline": "I analyze quantitative and qualitative data for decision-making and project evaluation”,
+    "cta": "View my work"
   },
-  “about”:{
-    “title”: “About me”,
-    “bio”: "Economist with over 7 years of experience in socioeconomic data analysis, impact assessment, and applied statistical modeling. Experience in processing and analyzing household surveys, constructing indicators, and preparing technical reports for decision-making.",
-    “expertise”: “My Specialization”,
-    “interests”: “Interests”
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Economista con más de 7 años de experiencia en análisis de datos socioeconómicos, evaluación de impacto y modelación estadística aplicada. Experiencia en procesamiento y análisis de encuestas a hogares, construcción de indicadores y elaboración de informes técnicos para la toma de decisiones.",
+    "expertise": "Mi especialidad",
+    "interests": "Intereses"
   },
-  “projects”:{
-    “title”: “Projects”,
-    “subtitle”: “A selection of my recent work”,
-    “view”: “See more”,
-    “repo”: “Code”
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de mis trabajos recientes",
+    "view": "Ver más",
+    "repo": "Código"
   },
-  “research”:{
-    “title”: “Research”,
-    “subtitle”: “Articles and publications”,
-    “readMore”: “Read more”
+  "research": {
+    "title": "Investigación",
+    "subtitle": "Artículos y publicaciones",
+    "readMore": "Leer más"
   },
-  “experience”: {
-    “title”: “Experience”,
-    “current”: “Current”
+  "experience": {
+    "title": "Experiencia",
+    "current": "Actual"
   },
-  “contact”:{
-    “title”: “Contact”,
-    “intro”: "Do you have a project in mind? I’d love to hear from you.",
-    “email”: “Email”,
-    “phone”: “Phone”,
-    “available”: “Available for opportunities”
+  "contact": {
+    "title": "Contacto",
+    "intro": "¿Tienes un proyecto en mente? Me encantaría escucharte.",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "available": "Disponible para oportunidades"
   },
-  “footer”: {
-    “copyright”: "© 2024 Karen Camilo. All rights reserved."
+  "footer": {
+    "copyright": "© 2024 Karen Camilo. Todos los derechos reservados."
   }
 }
