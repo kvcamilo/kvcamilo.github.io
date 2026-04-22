@@ -16,8 +16,14 @@
   "about": {
     "title": "About me",
     "bio": "Economist with over 7 years of experience in socioeconomic data analysis, impact assessment, and applied statistical modeling. Experience in processing and analyzing household surveys, constructing indicators, and preparing technical reports for decision-making.",
-    "expertise": "Mi especialidad",
-    "interests": "Intereses"
+    "expertise": {
+      "title": "My expertise",
+      "items": ["Socioeconomic data analysis", "Impact assessment", "Statistical modeling", "Household surveys", "Economic indicators", "Technical reports"]
+    },
+    "interests": {
+      "title": "Interests",
+      "items": ["Development economics", "Public policy", "Quantitative research", "Social welfare", "Economic sustainability", "Social impact"]
+    }
   },
   "projects": {
     "title": "Projects",
