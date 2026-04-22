@@ -38,14 +38,22 @@ const experienceData = experience[currentLang];
 ---
 
 <Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio} lang={currentLang}>
-  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+  <div class="mx-auto flex w-full flex-col lg:flex-row min-h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20 px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40">
     <Section id="about" title={t.about.title}>
     <div class="max-w-none text-gray-700 dark:text-gray-400 mb-6 sm:mb-12">
       <p class="mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">{t.about.bio}</p>
-      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.expertise}</h3>
-      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 mb-4 sm:mb-6 leading-relaxed">React, TypeScript, Node.js, Python, PostgreSQL, MongoDB, AWS, Docker</p>
-      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.interests}</h3>
-      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 leading-relaxed">Scalable architecture, open source, clean code, user experience</p>
+      
+      {/* Expertise Section */}
+      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.expertise.title}</h3>
+      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+        {t.about.expertise.items.join(', ')}
+      </p>
+      
+      {/* Interests Section */}
+      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.interests.title}</h3>
+      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 leading-relaxed">
+        {t.about.interests.items.join(', ')}
+      </p>
     </div>
 
     <!-- Experience Section -->

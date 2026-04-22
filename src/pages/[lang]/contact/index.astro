@@ -33,10 +33,9 @@ const t = currentLang === 'en' ? enTranslations : esTranslations;
 const contactObj = contactModule?.default || contactModule || { es: {}, en: {} };
 const contact = contactObj[currentLang] || { email: '', phone: '', social: {} };
 ---
----
 
 <Layout title={`${t.contact.title}`} description={t.contact.intro} lang={currentLang}>
-  <div class="h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
+  <div class="mx-auto flex w-full flex-col lg:flex-row min-h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20 px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40">
     <Section id="contact" title={t.contact.title}>
     <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">{t.contact.intro}</p>
     

@@ -55,10 +55,6 @@ if (hasProjects) {
               alt={profileData.name}
               class="w-48 h-48 rounded-full border-8 border-gray-200 dark:border-gray-800 object-cover shadow-lg"
             />
-            <!-- Badge Icon -->
-            <div class="absolute bottom-0 right-0 w-16 h-16 bg-black rounded-full flex items-center justify-center shadow-lg">
-              
-            </div>
           </div>
         </div>
 
@@ -70,6 +66,27 @@ if (hasProjects) {
           <div class="space-y-3 sm:space-y-4 text-sm sm:text-base">
             <p class="text-gray-600 dark:text-gray-400">📍 {profileData.location}</p>
             <p class="text-gray-600 dark:text-gray-400">✉️ <a href={`mailto:${profileData.email}`} class="text-blue-600 dark:text-blue-400 hover:underline">{profileData.email}</a></p>
+          </div>
+
+          <!-- Expertise and Interests Section - Desktop Only -->
+          <div class="hidden lg:block mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 max-w-2xl mx-auto w-full">
+            <div class="grid grid-cols-2 gap-8">
+              {/* Expertise */}
+              <div>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-3">{t.about.expertise.title}</h3>
+                <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+                  {t.about.expertise.items.join(', ')}
+                </p>
+              </div>
+
+              {/* Interests */}
+              <div>
+                <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mb-3">{t.about.interests.title}</h3>
+                <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+                  {t.about.interests.items.join(', ')}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>

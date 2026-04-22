@@ -34,10 +34,9 @@ const t = currentLang === 'en' ? enTranslations : esTranslations;
 const projectsObj = projectsModule?.default || projectsModule || { es: [], en: [] };
 const projects = projectsObj[currentLang] || [];
 ---
----
 
 <Layout title={`${t.projects.title}`} description={t.projects.subtitle} lang={currentLang}>
-  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+  <div class="mx-auto flex w-full flex-col lg:flex-row min-h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20 px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40">
     <Section id="projects" title={t.projects.title} subtitle={t.projects.subtitle}>
     <div>
       {projects.map((project) => (
